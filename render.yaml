@@ -1,0 +1,44 @@
+databases:
+  - name: amys-kitchen-db
+    databaseName: amyskitchen
+    user: amyskitchen
+    plan: free
+
+services:
+  - type: web
+    name: amys-kitchen
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: amys-kitchen-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@amys.kitchen
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      # Public URL for password-reset emails. Set to your Render URL after deploy.
+      - key: APP_BASE_URL
+        value: https://amys-kitchen.onrender.com
+      # Optional SMTP for reset emails. Leave unset to use dev (token in response).
+      # - key: SMTP_HOST
+      #   value: smtp.example.com
+      # - key: SMTP_PORT
+      #   value: 587
+      # - key: SMTP_SECURE
+      #   value: "false"
+      # - key: SMTP_USER
+      #   value: you@example.com
+      # - key: SMTP_PASS
+      #   sync: false
+      # - key: SMTP_FROM
+      #   value: Amy's Kitchen <no-reply@amyskitchen.com>

@@ -1,0 +1,8 @@
+node_modules
+dist
+restaurant.db
+restaurant.db-wal
+restaurant.db-shm
+.env
+npm-debug.log
+.DS_Store

@@ -1,0 +1,114 @@
+.res-page {
+  min-height: 70vh;
+}
+
+.res-form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+}
+
+.res-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.res-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.res-field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.res-field input,
+.res-field select,
+.res-field textarea {
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--surface);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.res-field input:focus,
+.res-field select:focus,
+.res-field textarea:focus {
+  border-color: var(--primary);
+}
+
+.res-field textarea {
+  resize: vertical;
+}
+
+.err {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.res-seating {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.res-radio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.res-submit {
+  justify-self: start;
+  margin-top: 4px;
+}
+
+.res-done {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.res-done-card {
+  max-width: 460px;
+  padding: 36px;
+  text-align: center;
+}
+
+.res-check {
+  font-size: 3rem;
+}
+
+.res-id {
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.92rem;
+}
+
+.res-done-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+@media (max-width: 560px) {
+  .res-row {
+    grid-template-columns: 1fr;
+  }
+}

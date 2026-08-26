@@ -1,0 +1,142 @@
+.menu-page {
+  min-height: 70vh;
+}
+
+.menu-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.menu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all 0.15s ease;
+}
+
+.tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.menu-search {
+  flex: 1;
+  min-width: 180px;
+  max-width: 280px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.menu-search:focus {
+  border-color: var(--primary);
+}
+
+.menu-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.menu-emoji {
+  font-size: 3.4rem;
+  text-align: center;
+  padding: 22px 0;
+  background: var(--surface-2);
+}
+
+.menu-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.menu-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.menu-name {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.menu-price {
+  font-weight: 800;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.menu-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.menu-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.menu-add {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.menu-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 0;
+}
+
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .menu-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .menu-search {
+    max-width: none;
+  }
+}
